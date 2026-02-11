@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>💼 Calculadora Financiera v3.0 - Estructura Societaria</title>
+  <title>💼 Calculadora Financiera v3.1 - Estructura Societaria</title>
 
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -732,7 +732,7 @@
     <div class="header-content">
       <div>
         <h1>💼 Modelo Financiero - <span id="displayNombreProyecto">Proyecto Sin Nombre</span></h1>
-        <div class="header-subtitle">v3.0 - Estructura Societaria</div>
+        <div class="header-subtitle">v3.1 - Estructura Societaria</div>
       </div>
       <div class="header-actions">
         <button class="btn btn-secondary" id="btnLimpiar">Limpiar</button>
@@ -759,7 +759,7 @@
           <input type="number" id="pctSocMicroinv" min="1" max="99" step="0.1" value="48">
         </div>
         <div class="input-group">
-          <label for="pctSocChef">% Sociedad Chef <small>(auto-calculado)</small></label>
+          <label for="pctSocChef">% Controladora <small>(auto-calculado)</small></label>
           <input type="number" id="pctSocChef" value="52" disabled>
           <div class="input-help-text">Se calcula como 100% - % Microinversionistas</div>
         </div>
@@ -768,7 +768,7 @@
 
       <!-- INGRESOS -->
       <section class="input-section">
-        <div class="section-title">Ingresos Mensuales por Año</div>
+        <div class="section-title">Ingresos Anuales por Año</div>
         <div class="input-checkbox-group">
           <input type="checkbox" id="incluirIVA">
           <label for="incluirIVA">Ingresos incluyen IVA</label>
@@ -779,24 +779,24 @@
           <div class="input-help-text">IVA se descontará de ingresos brutos</div>
         </div>
         <div class="input-group">
-          <label for="ingresoAo1">Año 1 ($)</label>
-          <input type="text" id="ingresoAo1" class="money-input" value="0">
+          <label for="ingresoAo1">Año 1 (Anual en $)</label>
+          <input type="text" id="ingresoAo1" class="money-input" value="600000000">
         </div>
         <div class="input-group">
-          <label for="ingresoAo2">Año 2 ($)</label>
-          <input type="text" id="ingresoAo2" class="money-input" value="50000000">
+          <label for="ingresoAo2">Año 2 (Anual en $)</label>
+          <input type="text" id="ingresoAo2" class="money-input" value="750000000">
         </div>
         <div class="input-group">
-          <label for="ingresoAo3">Año 3 ($)</label>
-          <input type="text" id="ingresoAo3" class="money-input" value="100000000">
+          <label for="ingresoAo3">Año 3 (Anual en $)</label>
+          <input type="text" id="ingresoAo3" class="money-input" value="900000000">
         </div>
         <div class="input-group">
-          <label for="ingresoAo4">Año 4 ($)</label>
-          <input type="text" id="ingresoAo4" class="money-input" value="150000000">
+          <label for="ingresoAo4">Año 4 (Anual en $)</label>
+          <input type="text" id="ingresoAo4" class="money-input" value="1000000000">
         </div>
         <div class="input-group">
-          <label for="ingresoAo5">Año 5 - Estabilización ($)</label>
-          <input type="text" id="ingresoAo5" class="money-input" value="150000000">
+          <label for="ingresoAo5">Año 5 - Estabilización (Anual en $)</label>
+          <input type="text" id="ingresoAo5" class="money-input" value="1100000000">
         </div>
       </section>
 
@@ -805,15 +805,15 @@
         <div class="section-title">Operación y Tributación</div>
         <div class="input-group">
           <label for="margenUtilidad">Margen Utilidad (%)</label>
-          <input type="number" id="margenUtilidad" min="0" max="100" step="0.1" value="25">
+          <input type="number" id="margenUtilidad" min="0" max="100" step="0.1" value="0">
         </div>
         <div class="input-group">
           <label for="pctDistribuir">% a Distribuir (%)</label>
-          <input type="number" id="pctDistribuir" min="0" max="100" step="0.1" value="80">
+          <input type="number" id="pctDistribuir" min="0" max="100" step="0.1" value="0">
         </div>
         <div class="input-group">
           <label for="impuesto1Cat">Impuesto 1ª Categoría (%) <small>nivel sociedad</small></label>
-          <input type="number" id="impuesto1Cat" min="0" max="35" step="0.1" value="25">
+          <input type="number" id="impuesto1Cat" min="0" max="35" step="0.1" value="0">
           <div class="input-help-text">Chile: 25% empresas (2024-2026)</div>
         </div>
       </section>
@@ -824,7 +824,7 @@
 
       <!-- CONTROLADOR -->
       <section class="input-section">
-        <div class="section-title">Sociedad Chef (Controlador)</div>
+        <div class="section-title">Controladora</div>
         <div class="input-group">
           <label for="ctrlCapitalInicial">Capital Inicial en Efectivo ($) <small>(opcional)</small></label>
           <input type="text" id="ctrlCapitalInicial" class="money-input" value="0">
@@ -839,7 +839,7 @@
         </div>
         <div class="input-group">
           <label for="ctrlRetencion">% Retención Impuestos (%)</label>
-          <input type="number" id="ctrlRetencion" min="0" max="99" step="0.1" value="10">
+          <input type="number" id="ctrlRetencion" min="0" max="99" step="0.1" value="0">
         </div>
       </section>
 
@@ -865,7 +865,7 @@
           <div class="metric-item">
             <span class="metric-label">Capital Levantado</span>
             <div class="metric-value highlight" id="metricCapital">$0</div>
-            <div class="metric-subtext" id="metricCapitalPct">— % equity</div>
+            <div class="metric-subtext" id="metricCapitalPct">—% equity</div>
           </div>
           <div class="metric-item">
             <span class="metric-label">Payback Promedio</span>
@@ -901,7 +901,7 @@
       <!-- CONTROLADOR RESULTADOS -->
       <section class="result-card controlador-card" id="controladorResults">
         <div class="card-header">
-          <div class="card-tier-label">SOCIEDAD CHEF (CONTROLADOR)</div>
+          <div class="card-tier-label">CONTROLADORA</div>
           <h2 class="card-title">Participación Mayoritaria • <span class="amount" id="ctrlResultPct">—%</span></h2>
         </div>
         <div class="card-grid">
@@ -997,7 +997,7 @@
         errorEl.classList.remove('show');
         inputMicroinv.classList.remove('error');
 
-        // Auto-calcular % Chef
+        // Auto-calcular % Controladora
         inputChef.value = (100 - pctMicroinv).toFixed(1);
         return true;
       }
@@ -1201,19 +1201,22 @@
       return van;
     }
 
-    // ==================== FUNCIÓN CLAVE: getDividendoMensual (v3.0) ====================
+    // ==================== FUNCIÓN CLAVE: getDividendoMensual (v3.1 - INPUT ANUAL) ====================
     function getDividendoMensual(mes, ingresos, incluirIVA, pctIVA, margenUtilidad, 
                                  pctDistribuir, pctSocMicroinv, pctEnSociedad, 
                                  impuesto1Cat, retencion) {
       const ao = getAoFromMes(mes);
 
-      // Seleccionar ingreso según año
-      let ingresoMes;
-      if (ao === 1) ingresoMes = ingresos.ao1;
-      else if (ao === 2) ingresoMes = ingresos.ao2;
-      else if (ao === 3) ingresoMes = ingresos.ao3;
-      else if (ao === 4) ingresoMes = ingresos.ao4;
-      else ingresoMes = ingresos.ao5;
+      // ✅ Seleccionar ingreso ANUAL según año
+      let ingresoAnual;
+      if (ao === 1) ingresoAnual = ingresos.ao1;
+      else if (ao === 2) ingresoAnual = ingresos.ao2;
+      else if (ao === 3) ingresoAnual = ingresos.ao3;
+      else if (ao === 4) ingresoAnual = ingresos.ao4;
+      else ingresoAnual = ingresos.ao5;
+
+      // ✅ DIVIDIR POR 12 para obtener ingreso mensual
+      const ingresoMes = ingresoAnual / 12;
 
       // NIVEL 1: RESTAURANTE
       let ingresoNeto = ingresoMes;
@@ -1285,41 +1288,42 @@
 
         // Calcular capital levantado y valor empresa
         const capitalLevantado = tiers.reduce((sum, t) => sum + (t.cantidad * t.monto), 0);
-        const valorEmpresa = pctSocMicroinv > 0 ? capitalLevantado / pctSocMicroinv : 0;
+        const valorEmpresa = pctSocMicroinv > 0 ? (capitalLevantado / pctSocMicroinv) : 0;
         const valorControlador = valorEmpresa * pctSocChef;
 
         // Calcular resultados por tier
         const resultadosTiers = tiers.map(tier => {
-          // CAMBIO CLAVE v3.0: % en sociedad, no % en empresa
-          const pctEnSociedad = capitalLevantado > 0 ? tier.monto / capitalLevantado : 0;
+          // % en sociedad, no en empresa
+          const pctEnSociedad = capitalLevantado > 0 ? (tier.monto / capitalLevantado) : 0;
           const pctEnRestaurant = pctEnSociedad * pctSocMicroinv;
           const retencionDec = tier.retencion / 100;
 
           const divAo5 = getDividendoMensual(60, ingresos, incluirIVA, pctIVA, margenUtilidad, 
-                                             pctDistribuir, pctSocMicroinv, pctEnSociedad, 
-                                             impuesto1Cat, retencionDec);
+                                              pctDistribuir, pctSocMicroinv, pctEnSociedad, 
+                                              impuesto1Cat, retencionDec);
 
           // Calcular retiro promedio primeros 5 años
           let sumaRetiros5Aos = 0;
           for (let mes = tier.mesRetornos; mes <= 60; mes++) {
-            const div = getDividendoMensual(mes, ingresos, incluirIVA, pctIVA, margenUtilidad,
-                                            pctDistribuir, pctSocMicroinv, pctEnSociedad,
-                                            impuesto1Cat, retencionDec);
+            const div = getDividendoMensual(mes, ingresos, incluirIVA, pctIVA, margenUtilidad, 
+                                             pctDistribuir, pctSocMicroinv, pctEnSociedad, 
+                                             impuesto1Cat, retencionDec);
             sumaRetiros5Aos += div.neto;
           }
           const mesesRetornos5Aos = Math.max(1, 60 - tier.mesRetornos + 1);
           const retiroPromedio5Aos = sumaRetiros5Aos / mesesRetornos5Aos;
 
-          const roiAnual = tier.monto > 0 ? (divAo5.neto * 12) / tier.monto : 0;
+          const roiAnual = tier.monto > 0 ? ((divAo5.neto * 12) / tier.monto) : 0;
 
           // Calcular payback
           let paybackMeses = null;
           let acumulado = 0;
           for (let mes = tier.mesRetornos; mes <= 120; mes++) {
-            const div = getDividendoMensual(mes, ingresos, incluirIVA, pctIVA, margenUtilidad,
-                                            pctDistribuir, pctSocMicroinv, pctEnSociedad,
-                                            impuesto1Cat, retencionDec);
+            const div = getDividendoMensual(mes, ingresos, incluirIVA, pctIVA, margenUtilidad, 
+                                             pctDistribuir, pctSocMicroinv, pctEnSociedad, 
+                                             impuesto1Cat, retencionDec);
             acumulado += div.neto;
+
             if (acumulado >= tier.monto) {
               paybackMeses = mes - tier.mesInversion;
               break;
@@ -1329,9 +1333,9 @@
           // Calcular TIR y VAN
           const flujos = [{ mes: tier.mesInversion, monto: -tier.monto }];
           for (let mes = tier.mesRetornos; mes <= 120; mes++) {
-            const div = getDividendoMensual(mes, ingresos, incluirIVA, pctIVA, margenUtilidad,
-                                            pctDistribuir, pctSocMicroinv, pctEnSociedad,
-                                            impuesto1Cat, retencionDec);
+            const div = getDividendoMensual(mes, ingresos, incluirIVA, pctIVA, margenUtilidad, 
+                                             pctDistribuir, pctSocMicroinv, pctEnSociedad, 
+                                             impuesto1Cat, retencionDec);
             flujos.push({ mes: mes, monto: div.neto });
           }
 
@@ -1342,13 +1346,13 @@
           const detalleMensual = [];
           let acumNeto = 0;
           for (let mes = tier.mesRetornos; mes <= 120; mes++) {
-            const div = getDividendoMensual(mes, ingresos, incluirIVA, pctIVA, margenUtilidad,
-                                            pctDistribuir, pctSocMicroinv, pctEnSociedad,
-                                            impuesto1Cat, retencionDec);
+            const div = getDividendoMensual(mes, ingresos, incluirIVA, pctIVA, margenUtilidad, 
+                                             pctDistribuir, pctSocMicroinv, pctEnSociedad, 
+                                             impuesto1Cat, retencionDec);
             acumNeto += div.neto;
 
             const ao = getAoFromMes(mes);
-            const mesEnAo = mes - (ao - 1) * 12;
+            const mesEnAo = mes - ((ao - 1) * 12);
 
             detalleMensual.push({
               mes: mes,
@@ -1356,7 +1360,7 @@
               bruto: div.bruto,
               neto: div.neto,
               acumulado: acumNeto,
-              esPayback: paybackMeses && (mes - tier.mesInversion === paybackMeses)
+              esPayback: paybackMeses === (mes - tier.mesInversion)
             });
           }
 
@@ -1375,23 +1379,24 @@
           };
         });
 
-        // Calcular resultados controlador (Sociedad Chef)
+        // Calcular resultados controlador
         const pctParticipacionCtrl = pctSocChef;
-        const retencionCtrlDec = controlador.retencion / 100;
+        const retencionCtrlDec = controlador.retencion;
 
-        const divCtrlAo5 = getDividendoMensual(60, ingresos, incluirIVA, pctIVA, margenUtilidad,
-                                               pctDistribuir, pctSocChef, 1.0,
-                                               impuesto1Cat, retencionCtrlDec);
+        const divCtrlAo5 = getDividendoMensual(60, ingresos, incluirIVA, pctIVA, margenUtilidad, 
+                                                pctDistribuir, pctSocChef, 1.0, 
+                                                impuesto1Cat, retencionCtrlDec);
+
         const utilidadAnualCtrl = divCtrlAo5.neto * 12;
 
-        // ✅ FIX APLICADO: TIR/VAN basado en valor equity
+        // TIR/VAN basado en valor equity
         const inversionInicialChef = valorEmpresa * pctSocChef;
         const flujosCtrl = [{ mes: 0, monto: -inversionInicialChef }];
 
         for (let mes = 1; mes <= 120; mes++) {
-          const div = getDividendoMensual(mes, ingresos, incluirIVA, pctIVA, margenUtilidad,
-                                          pctDistribuir, pctSocChef, 1.0,
-                                          impuesto1Cat, retencionCtrlDec);
+          const div = getDividendoMensual(mes, ingresos, incluirIVA, pctIVA, margenUtilidad, 
+                                           pctDistribuir, pctSocChef, 1.0, 
+                                           impuesto1Cat, retencionCtrlDec);
           flujosCtrl.push({ mes: mes, monto: div.neto });
         }
 
@@ -1400,15 +1405,15 @@
 
         // Calcular promedios ponderados
         const paybackPromedio = resultadosTiers.reduce((sum, r) => {
-          return sum + (r.paybackMeses || 120) * r.capitalTier;
+          return sum + ((r.paybackMeses || 120) * r.capitalTier);
         }, 0) / capitalLevantado;
 
         const roiPromedio = resultadosTiers.reduce((sum, r) => {
-          return sum + r.roiAnual * r.capitalTier;
+          return sum + (r.roiAnual * r.capitalTier);
         }, 0) / capitalLevantado;
 
         const tirPromedio = resultadosTiers.reduce((sum, r) => {
-          return sum + (r.tir || 0) * r.capitalTier;
+          return sum + ((r.tir || 0) * r.capitalTier);
         }, 0) / capitalLevantado;
 
         const vanTotal = resultadosTiers.reduce((sum, r) => sum + (r.van || 0), 0) + (vanCtrl || 0);
@@ -1433,7 +1438,7 @@
 
         // Renderizar resultados
         renderTiersResults(resultadosTiers, ingresos, incluirIVA, pctIVA, margenUtilidad, 
-                          pctDistribuir, pctSocMicroinv, impuesto1Cat, valorEmpresa);
+                            pctDistribuir, pctSocMicroinv, impuesto1Cat, valorEmpresa);
 
         // Actualizar controlador
         document.getElementById('ctrlResultPct').textContent = formatPercent(pctSocChef);
@@ -1447,19 +1452,10 @@
 
         // Renderizar gráfico
         renderChart(resultadosTiers, 
-                   { 
-                     tir: tirCtrl, 
-                     van: vanCtrl, 
-                     ingresos, 
-                     incluirIVA,
-                     pctIVA,
-                     margenUtilidad, 
-                     pctDistribuir, 
-                     pctParticipacionCtrl: pctSocChef, 
-                     retencionCtrlDec,
-                     impuesto1Cat
-                   }, 
-                   tasaDescuento);
+                    { tir: tirCtrl, van: vanCtrl }, 
+                    ingresos, incluirIVA, pctIVA, margenUtilidad, pctDistribuir, 
+                    pctParticipacionCtrl, retencionCtrlDec, impuesto1Cat, 
+                    tasaDescuento);
 
       } catch (error) {
         console.error('Error en cálculos:', error);
@@ -1469,7 +1465,7 @@
     // ==================== RENDERIZAR RESULTADOS TIERS ====================
 
     function renderTiersResults(resultados, ingresos, incluirIVA, pctIVA, margenUtilidad, 
-                                pctDistribuir, pctSocMicroinv, impuesto1Cat, valorEmpresa) {
+                                  pctDistribuir, pctSocMicroinv, impuesto1Cat, valorEmpresa) {
       const container = document.getElementById('tiersResultsContainer');
       container.innerHTML = '';
 
@@ -1503,7 +1499,7 @@
               <div class="card-metric-subtext">Del total empresa</div>
             </div>
             <div class="card-metric">
-              <span class="card-metric-label">Retiro Mensual NETO Año 5</span>
+              <span class="card-metric-label">Retiro Mensual NETO (Año 5)</span>
               <div class="card-metric-value highlight">${formatMoney(res.divAo5.neto)}</div>
               <div class="card-metric-subtext">Bruto: ${formatMoney(res.divAo5.bruto)}</div>
             </div>
@@ -1519,7 +1515,7 @@
             </div>
             <div class="card-metric">
               <span class="card-metric-label">Payback Real</span>
-              <div class="card-metric-value ${res.paybackMeses > 48 ? 'text-warning' : ''}">${res.paybackMeses ? res.paybackMeses + ' meses' : '> 120 meses'}</div>
+              <div class="card-metric-value ${res.paybackMeses > 48 ? 'text-warning' : ''}">${res.paybackMeses ? res.paybackMeses + ' meses' : '>120 meses'}</div>
               <div class="card-metric-subtext">Desde inversión</div>
             </div>
             <div class="card-metric">
@@ -1533,6 +1529,7 @@
               <div class="card-metric-subtext">Valor creado</div>
             </div>
           </div>
+
           <div class="detalle-toggle">
             <button class="btn-toggle-detalle" onclick="toggleDetalleMensual(${res.tier.id})">📊 Ver detalle mensual</button>
           </div>
@@ -1550,7 +1547,7 @@
               <tbody id="detalle-body-${res.tier.id}"></tbody>
             </table>
             <button class="btn-load-more hidden" id="load-more-${res.tier.id}" onclick="loadMoreDetalle(${res.tier.id})">
-              ⬇ Cargar más (siguiente 24 meses)
+              Cargar más (siguiente 24 meses)
             </button>
           </div>
         `;
@@ -1642,7 +1639,9 @@
 
     // ==================== GRÁFICO ====================
 
-    function renderChart(resultadosTiers, controladorData, tasaDescuento) {
+    function renderChart(resultadosTiers, controladorData, ingresos, incluirIVA, pctIVA, 
+                          margenUtilidad, pctDistribuir, pctParticipacionCtrl, 
+                          retencionCtrlDec, impuesto1Cat, tasaDescuento) {
       const ctx = document.getElementById('vanChart');
 
       // Datos trimestrales (cada 3 meses)
@@ -1682,22 +1681,16 @@
       if (controladorData) {
         const pctSocMicroinv = (parseFloat(document.getElementById('pctSocMicroinv').value) / 100) || 0;
         const capitalLevantado = tiers.reduce((sum, t) => sum + (t.cantidad * t.monto), 0);
-        const valorEmpresa = pctSocMicroinv > 0 ? capitalLevantado / pctSocMicroinv : 0;
+        const valorEmpresa = pctSocMicroinv > 0 ? (capitalLevantado / pctSocMicroinv) : 0;
         const pctSocChef = (parseFloat(document.getElementById('pctSocChef').value) / 100) || 0;
         const inversionInicialChef = valorEmpresa * pctSocChef;
 
         const dataCtrl = trimestres.map(mes => {
           const flujos = [{ mes: 0, monto: -inversionInicialChef }];
           for (let m = 1; m <= mes; m++) {
-            const div = getDividendoMensual(m, controladorData.ingresos, 
-                                            controladorData.incluirIVA,
-                                            controladorData.pctIVA,
-                                            controladorData.margenUtilidad,
-                                            controladorData.pctDistribuir, 
-                                            controladorData.pctParticipacionCtrl,
-                                            1.0,
-                                            controladorData.impuesto1Cat,
-                                            controladorData.retencionCtrlDec);
+            const div = getDividendoMensual(m, ingresos, incluirIVA, pctIVA, margenUtilidad, 
+                                             pctDistribuir, pctParticipacionCtrl, 1.0, 
+                                             impuesto1Cat, retencionCtrlDec);
             flujos.push({ mes: m, monto: div.neto });
           }
           return calcularVAN(flujos, tasaDescuento);
@@ -1735,13 +1728,20 @@
               labels: {
                 boxWidth: 12,
                 padding: 10,
-                font: { size: 11 }
+                font: {
+                  size: 11
+                }
               }
             },
             tooltip: {
               backgroundColor: 'rgba(17, 24, 39, 0.95)',
-              titleFont: { size: 12, weight: 600 },
-              bodyFont: { size: 12 },
+              titleFont: {
+                size: 12,
+                weight: 600
+              },
+              bodyFont: {
+                size: 12
+              },
               padding: 10,
               cornerRadius: 4,
               callbacks: {
@@ -1753,15 +1753,25 @@
           },
           scales: {
             x: {
-              grid: { display: false },
-              ticks: { font: { size: 11 } }
+              grid: {
+                display: false
+              },
+              ticks: {
+                font: {
+                  size: 11
+                }
+              }
             },
             y: {
-              grid: { color: '#F3F4F6' },
+              grid: {
+                color: '#F3F4F6'
+              },
               ticks: {
-                font: { size: 11 },
+                font: {
+                  size: 11
+                },
                 callback: function(value) {
-                  return (value / 1000000).toFixed(1) + 'M';
+                  return '$' + (value / 1000000).toFixed(1) + 'M';
                 }
               }
             }
@@ -1781,19 +1791,8 @@
         margin: 10,
         filename: `modelo-financiero-${nombreProyecto.replace(/\s+/g, '-')}-${fecha}.pdf`,
         image: { type: 'jpeg', quality: 0.95 },
-        html2canvas: { 
-          scale: 1.5, 
-          useCORS: true, 
-          logging: false,
-          width: element.scrollWidth,
-          windowWidth: element.scrollWidth
-        },
-        jsPDF: { 
-          unit: 'mm', 
-          format: 'a4', 
-          orientation: 'portrait',
-          compress: true
-        },
+        html2canvas: { scale: 1.5, useCORS: true, logging: false, width: element.scrollWidth, windowWidth: element.scrollWidth },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compress: true },
         pagebreak: { mode: 'avoid-all', css: [] },
         legacy: true
       };
@@ -1812,16 +1811,16 @@
       document.getElementById('incluirIVA').checked = false;
       document.getElementById('containerIVA').style.display = 'none';
       document.getElementById('pctIVA').value = 19;
-      document.getElementById('ingresoAo1').value = '0';
-      document.getElementById('ingresoAo2').value = '50.000.000';
-      document.getElementById('ingresoAo3').value = '100.000.000';
-      document.getElementById('ingresoAo4').value = '150.000.000';
-      document.getElementById('ingresoAo5').value = '150.000.000';
-      document.getElementById('margenUtilidad').value = 25;
-      document.getElementById('pctDistribuir').value = 80;
-      document.getElementById('impuesto1Cat').value = 25;
+      document.getElementById('ingresoAo1').value = '600.000.000';
+      document.getElementById('ingresoAo2').value = '750.000.000';
+      document.getElementById('ingresoAo3').value = '900.000.000';
+      document.getElementById('ingresoAo4').value = '1.000.000.000';
+      document.getElementById('ingresoAo5').value = '1.100.000.000';
+      document.getElementById('margenUtilidad').value = 0;
+      document.getElementById('pctDistribuir').value = 0;
+      document.getElementById('impuesto1Cat').value = 0;
       document.getElementById('ctrlCapitalInicial').value = '0';
-      document.getElementById('ctrlRetencion').value = 10;
+      document.getElementById('ctrlRetencion').value = 0;
       document.getElementById('tasaDescuento').value = 12;
 
       tiers = [{
@@ -1861,6 +1860,37 @@
       }];
       nextTierId = 2;
       renderTiers();
+
+      // ==================== ✨ CARGA DESDE CALCULADORA M² ====================
+      const datosGuardados = localStorage.getItem('datosIngresos');
+      if (datosGuardados) {
+        try {
+          const datos = JSON.parse(datosGuardados);
+
+          // Verificar que tenga los datos correctos (ANUALES)
+          if (datos.ingresosAnuales && Array.isArray(datos.ingresosAnuales) && datos.ingresosAnuales.length === 5) {
+            console.log('✅ Datos cargados desde Calculadora m²:', datos);
+
+            // Cargar valores ANUALES en los inputs
+            document.getElementById('ingresoAo1').value = datos.ingresosAnuales[0].toLocaleString('es-CL');
+            document.getElementById('ingresoAo2').value = datos.ingresosAnuales[1].toLocaleString('es-CL');
+            document.getElementById('ingresoAo3').value = datos.ingresosAnuales[2].toLocaleString('es-CL');
+            document.getElementById('ingresoAo4').value = datos.ingresosAnuales[3].toLocaleString('es-CL');
+            document.getElementById('ingresoAo5').value = datos.ingresosAnuales[4].toLocaleString('es-CL');
+
+            // Mostrar notificación al usuario
+            setTimeout(() => {
+              alert('✅ Datos cargados desde Calculadora de Ingresos m²\n\nIngresos anuales importados correctamente.');
+            }, 500);
+
+            // Limpiar localStorage después de cargar
+            localStorage.removeItem('datosIngresos');
+          }
+        } catch(e) {
+          console.error('❌ Error al cargar datos desde localStorage:', e);
+        }
+      }
+      // ==================== FIN CARGA DESDE CALCULADORA M² ====================
 
       // 2. Formatear valores iniciales
       const moneyInputsGlobal = document.querySelectorAll('#ingresoAo1, #ingresoAo2, #ingresoAo3, #ingresoAo4, #ingresoAo5, #ctrlCapitalInicial');
